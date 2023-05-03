@@ -55,8 +55,7 @@
 }
 
 .feed__item img {
-  /* object-fit: cover; */
-  object-fit: contain;
+  object-fit: cover;
   aspect-ratio: 1/1;
   height: auto;
   width: 100%;
@@ -93,8 +92,3 @@
 .profile__button__close:hover {
   cursor: pointer;
 }
-
-/* .post__image {
-  width: 400px;
-  height: 400px;
-} */

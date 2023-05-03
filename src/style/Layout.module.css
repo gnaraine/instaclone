@@ -5,7 +5,7 @@
 .grid__container {
   display: flex;
   /* grid-template-columns: 1fr 2fr; */
-  /* align-items: start; */
+
   background: rgb(0, 0, 0);
   color: white;
 }

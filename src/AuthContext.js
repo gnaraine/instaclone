@@ -21,7 +21,6 @@ export function signUp(email, password, username) {
       })
         .then(() => {
           // Profile updated!
-          // ...
         })
         .catch((error) => {
           // An error occurred

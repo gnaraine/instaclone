@@ -226,11 +226,15 @@ function ImageUpload({ username }) {
               onChange={(event) => setCaption(event.target.value)}
             />
             {/* <Button onClick={handleUpload}>Upload</Button> */}
-            <progress
-              className={styles.imageUpload__progress}
-              value={progress}
-            ></progress>
-            {progress === 100 ? "Done" : ""}
+
+            {progress === 100 ? (
+              "Done"
+            ) : (
+              <progress
+                className={styles.imageUpload__progress}
+                value={progress}
+              ></progress>
+            )}
           </div>
         </div>
       </div>

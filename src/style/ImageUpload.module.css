@@ -24,6 +24,10 @@
   margin-top: 100px;
 }
 
+.upload__selector input {
+  display: none;
+}
+
 .upload_header {
   border-bottom: 2px solid rgba(199, 199, 199, 0.342);
   width: 100%;

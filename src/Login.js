@@ -5,22 +5,29 @@ import Box from "@mui/material/Box";
 import { auth } from "./firebase";
 import styles from "./style/Login.module.css";
 import { useAuth, signIn, signUp } from "./AuthContext";
-
+import { useNavigate } from "react-router-dom";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [showLogin, setShowLogin] = useState(true);
-
+  const { user } = useAuth();
   const { isLoggedIn } = useAuth();
+  const navigate = useNavigate();
 
-  const logIn = (event) => {
+  const handleLogIn = (event) => {
     event.preventDefault();
     signIn(email, password);
   };
 
+  const handleSignUp = (event) => {
+    event.preventDefault();
+    signUp(email, password, username);
+  };
+
   return (
     <div className={styles.Login__container}>
+      {user ? navigate("/") : ""}
       {showLogin ? (
         <Box>
           <Typography id="modal-modal-title" variant="h6" component="h2">
@@ -43,7 +50,7 @@ function Login() {
             <button
               className={styles.Login__Button}
               type="submit"
-              onClick={logIn}
+              onClick={handleLogIn}
             >
               Login
             </button>
@@ -86,7 +93,7 @@ function Login() {
             <button
               className={styles.Login__Button}
               type="submit"
-              onClick={signUp}
+              onClick={handleSignUp}
             >
               Sign up
             </button>
