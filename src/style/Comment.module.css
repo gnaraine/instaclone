@@ -1,0 +1,24 @@
+.comment__container {
+  display: grid;
+  grid-template-columns: 50px auto;
+  padding-top: 10px;
+}
+
+.comment__profile {
+  grid-row: span 2;
+}
+
+.comment {
+  display: flex;
+}
+.comment a {
+  padding-right: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.comment__profile img {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}

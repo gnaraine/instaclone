@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+}
+
+.grid__container {
+  display: flex;
+  /* grid-template-columns: 1fr 2fr; */
+  /* align-items: start; */
+  background: rgb(0, 0, 0);
+  color: white;
+}
+
+.App__Login {
+  grid-column: 2;
+  justify-self: center;
+  padding-top: 100px;
+}
+
+header {
+  grid-column: span 3;
+  text-align: center;
+  border-bottom: 1px solid rgba(199, 199, 199, 0.342);
+}
+
+nav {
+  min-width: 200px;
+  top: 0;
+  padding-left: 10px;
+  padding-top: 25px;
+  border-right: 1px solid rgba(199, 199, 199, 0.342);
+  position: sticky;
+}
+
+article {
+  margin: auto;
+  padding: 30px;
+  width: 600px;
+}
+
+aside {
+  top: 0;
+  padding: 30px;
+  border-left: 1px solid #ddd;
+}
+footer {
+  grid-column: span 3;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  padding: 30px;
+}
+
+/* responsive */
+
+@media screen and (max-width: 1265px) {
+  nav {
+    width: 48px;
+    padding: 12px;
+    min-width: auto;
+  }
+
+  nav p {
+    display: none;
+  }
+
+  .grid-container {
+    grid-template-columns: 0.5fr 3fr;
+  }
+
+  .btn_logout {
+    margin-top: auto;
+    margin-bottom: -12px;
+  }
+}
