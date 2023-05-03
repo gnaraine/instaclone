@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Input, Modal } from "@mui/material";
+import React, { useState } from "react";
+import { Input } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { auth } from "./firebase";
 import styles from "./style/Login.module.css";
 import { useAuth, signIn, signUp } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +11,6 @@ function Login() {
   const [username, setUsername] = useState("");
   const [showLogin, setShowLogin] = useState(true);
   const { user } = useAuth();
-  const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
 
   const handleLogIn = (event) => {
