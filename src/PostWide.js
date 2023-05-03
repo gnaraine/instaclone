@@ -15,11 +15,11 @@ import {
 } from "firebase/firestore";
 import { db } from "./firebase";
 import Comment from "./Comment";
-
+import { useAuth } from "./AuthContext";
 function Post({ postId, username, caption, imageUrl, likes }) {
   const [comments, SetComments] = useState([]);
   const [comment, setComment] = useState("");
-
+  const { user } = useAuth();
   useEffect(() => {
     const q = query(
       collection(db, "posts", postId, "comments"),
@@ -32,7 +32,7 @@ function Post({ postId, username, caption, imageUrl, likes }) {
         SetComments(
           snapshot.docs.map((doc) => ({
             id: doc.id,
-            username: doc.data().username,
+            username: user,
             timestamp: doc.data().timestamp,
             comment: doc.data().comment,
           }))
